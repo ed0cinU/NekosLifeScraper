@@ -225,7 +225,7 @@ public final class NekosLifeScraper {
         new Thread(() -> {
             System.out.println("Starting with the Scrape of Nekos Life...");
             boolean firstScrape = true;
-            int printStartingCount = 0;
+            int printDownloadingCount = 0;
             while (true) {
                 if (!isScraping) {
                     String endpointFileCountText = "";
@@ -268,27 +268,22 @@ public final class NekosLifeScraper {
                         isScraping = false;
                         isDoneWithCurrentScrape = false;
                         scrapeCount++;
-                        printStartingCount = 0;
+                        printDownloadingCount = 0;
                     }
                     else {
-                        printStartingCount++;
-                        switch (printStartingCount) {
+                        printDownloadingCount++;
+                        switch (printDownloadingCount) {
                             case 100000000: {
-                                System.out.println("Starting the Scraper");
+                                System.out.println(".");
                                 break;
                             }
                             case 300000000: {
-                                System.out.println("Starting the Scraper.");
+                                System.out.println("..");
                                 break;
                             }
                             case 400000000: {
-                                System.out.println("Starting the Scraper..");
-                                printStartingCount = 0;
-                                break;
-                            }
-                            case 500000000: {
-                                System.out.println("Starting the Scraper...");
-                                printStartingCount = 0;
+                                System.out.println("...");
+                                printDownloadingCount = 0;
                                 break;
                             }
                             default: break;
