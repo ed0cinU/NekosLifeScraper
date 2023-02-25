@@ -9,13 +9,15 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
+/*
+ *   Copyright (c) 2023 ed0cinU
+ */
+
 public final class NekosLifeScraper {
 
-    private static boolean debug = true;
-    private static int nextScrapmaxScrapeDelay = 1000, maxScrapeDuplicateCount = 10, maxScrapesPerEndpoint = 100;
-
+    private static boolean debug;
+    private static int nextScrapmaxScrapeDelay, maxScrapeDuplicateCount, maxScrapesPerEndpoint;
     private final static String nekosLifeDomain = "nekos.life", nekosLifeApiDefaultUrl = "https://" + nekosLifeDomain + "/api/", nekosLifeCdnDefaultUrl = "https://cdn." + nekosLifeDomain + "/", responseDataSplitterStart = "\":\"", responseDataSplitterEnd = "\"}";
-
     private final static List<String> endPoints = Arrays.asList(
             "hug",
             "kiss",
